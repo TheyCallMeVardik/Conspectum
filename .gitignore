@@ -1,0 +1,59 @@
+# ── OS ───────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── .NET / C# ─────────────────────────────────────────────────────────────────
+**/bin/
+**/obj/
+*.user
+*.suo
+.vs/
+**/.vs/
+*.swp
+*.log
+
+# EF Core миграции-артефакты (скомпилированные снапшоты не нужны в git)
+# Сами файлы миграций (.cs) оставляем — они нужны для dotnet ef database update
+**/Migrations/*.Designer.cs
+
+# Публикация
+**/publish/
+**/out/
+
+# Rider / Resharper
+.idea/
+_ReSharper*/
+*.resharper
+
+# ── Секреты и конфигурация ────────────────────────────────────────────────────
+# .env оставляем в репо (там дефолтные значения для разработки).
+# Реальные секреты кладите в .env.local или .env.production — они игнорируются:
+.env.local
+.env.production
+.env.*.local
+**/appsettings.Production.json
+**/appsettings.Local.json
+
+# User secrets (dotnet user-secrets)
+**/secrets.json
+
+# ── Frontend (Next.js) ────────────────────────────────────────────────────────
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/*.tsbuildinfo
+frontend/next-env.d.ts
+
+# ── Docker ───────────────────────────────────────────────────────────────────
+# Локальные override-файлы для compose
+docker-compose.override.yml
+docker-compose.local.yml
+
+# ── Логи ─────────────────────────────────────────────────────────────────────
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
